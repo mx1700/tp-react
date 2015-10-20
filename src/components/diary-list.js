@@ -25,7 +25,7 @@ const DiaryList = React.createClass({
   render() {
     let diaries = this.props.diaries;
     return (
-      <div style={{padding: 10, paddingBottom: 0}}>
+      <div style={{padding: 10, paddingBottom: 0, backgroundColor: "#f3f3f3"}}>
         {diaries.map((diary) => <Diary key={diary.id} data={diary} onTouchHeader={this.props.onTouchDiaryHeader} />)}
       </div>
     );

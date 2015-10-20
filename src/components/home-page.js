@@ -27,24 +27,29 @@ const diariesData = {"count":1253,"page":1,"page_size":10,"diaries":[{"id":92382
 
 let menuItems = [
   { type: MenuItem.Types.SUBHEADER, text: '胶囊日记' },
-  { route: 'home', text: '首页' },
-  { route: 'tips', text: '提醒' },
+  { route: '/', text: '首页' },
+  { route: 'user', text: '提醒' },
   { route: 'notebooks', text: '日记本' },
   { type: MenuItem.Types.SUBHEADER, text: '张xx' },
   { route: 'get-started', text: '我的日记' },
   { route: 'get-started', text: '我的日记' },
+  {
+    type: MenuItem.Types.LINK,
+    payload: '#/user',
+    text: 'GitHub'
+  }
 ];
 
 
 const HomePage = React.createClass({
 
   childContextTypes : {
-    muiTheme: React.PropTypes.object,
+    muiTheme: React.PropTypes.object
   },
 
   getChildContext() {
       return {
-        muiTheme: ThemeManager.getMuiTheme(MyRawTheme),
+        muiTheme: ThemeManager.getMuiTheme(MyRawTheme)
       };
   },
 
@@ -53,13 +58,14 @@ const HomePage = React.createClass({
   },
 
   onTouchDiaryHeader(key, diary) {
-    alert(diary);
+    //alert(diary);
+    window.location.href = '#/user';
   },
 
   render() {
     var diaries = diariesData.diaries;
     return (
-      <div>
+      <div style={{position:"absolute", width: "100%", height: "100%"}}>
         <AppBar
           title="胶囊日记"
           iconClassNameRight="muidocs-icon-navigation-expand-more"
@@ -70,7 +76,7 @@ const HomePage = React.createClass({
         <LeftNav ref="leftNav" docked={false} menuItems={menuItems} />
       </div>
     );
-  },
+  }
 });
 
 

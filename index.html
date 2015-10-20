@@ -28,6 +28,37 @@
         font-size: 15px;
         line-height: 24px;
       }
+
+      .example-enter {
+        z-index: 100;
+        opacity: 0.01;
+        left: 10%;
+        transition: all 400ms ease-in-out;
+      }
+
+      .example-enter.example-enter-active {
+        z-index: 100;
+        opacity: 1;
+        left: 0;
+      }
+
+      .example-leave {
+        z-index: 1;
+        opacity: 1;
+        left: 0;
+        transition: opacity 400ms ease-in-out, left 800ms ease-in-out;
+      }
+
+      .example-leave.example-leave-active {
+        z-index: 1;
+        opacity: 0;
+        left: -10%;
+      }
+
+      .link-active {
+        color: #bbbbbb;
+        text-decoration: none;
+      }
     </style>
     <link href="/css/icon.css" rel="stylesheet">
   </head>
