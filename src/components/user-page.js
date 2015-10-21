@@ -25,8 +25,15 @@ const {
     } = mui;
 
 const AppBar = require('./app-bar');
+const BasePage = require('./base-page');
 
-const UserPage = React.createClass({
+class UserPage extends BasePage {
+    getClassName() {
+        return 'UserPage';
+    }
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (
@@ -64,8 +71,7 @@ const UserPage = React.createClass({
             </div>
         );
     }
-
-});
+}
 
 
 module.exports = UserPage;
