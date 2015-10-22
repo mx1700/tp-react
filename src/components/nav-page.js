@@ -13,7 +13,7 @@ module.exports = class NavPage extends BasePage {
 
     constructor(props) {
         super(props);
-        this.state = { pageStack: [<props.defaultPage />] };
+        this.state = { pageStack: [] };
     }
 
     pushPage(page) {
@@ -29,8 +29,6 @@ module.exports = class NavPage extends BasePage {
     }
 
     render() {
-        console.log('render');
-        console.log(this.state.pageStack);
         return (
             <div style={{ position:"absolute", width: "100%", height: "100%", overflow:"hidden" }}>
                 {this.state.pageStack}
